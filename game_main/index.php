@@ -19,6 +19,7 @@
 ?>
 <div id="HTTP_REFERER" style="display:none"><?php echo $_SERVER['HTTP_REFERER'] ?></div>
 <div id="difficulty" style="display:none"><?php echo $_POST['difficulty'] ?></div>
+<div id="correct_rate" style="display:none"><?php echo $_POST['correct_rate'] ?></div>
 
 <script src="./js/phina.min.js"></script>
 <script src="./js/axios.min.js"></script>

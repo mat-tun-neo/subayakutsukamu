@@ -38,6 +38,8 @@ const LOCATE_RANGE_MAX = 120;     // ヒントキャラの表示範囲 MAX
 const SCALE_RANGE_MAX = 2;        // ヒントキャラの拡大率 MAX
 const SCALE_RANGE_MIN = 0.3;      // ヒントキャラの拡大率 MIN
 const TIME_TO_NEXTGAME = 5*1000;  // 次ゲームまでの待機時間(ms)
+const CORRECT_RATE                // correct_XXX_YYY が正解となる確率
+   = document.getElementById("correct_rate").innerText;          
 
 // 難易度設定値
 //  open ：シャッターが開いている時間（ms）
@@ -515,7 +517,7 @@ function makeAnswer() {
   keys.shift();
   tmp = CHARACTER_NO[keys[0]].color;
   keys.shift();
-  if (Math.random() < 0.8) {
+  if (Math.random() < CORRECT_RATE) {
     hint2_spritesheet = CHARACTER_NO[post_data["correct"]].spritesheet;
   } else {
     hint2_spritesheet = "wrong_" + tmp + "_" + CHARACTER_NO[keys[0]].character;
